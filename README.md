@@ -15,10 +15,12 @@ fmt.Println(resp)
 ![Reponse](https://github.com/alytvynov/go-http/blob/main/doc/response.png)
 
 ```go
-    io.Copy(os.Stdout, resp.Body)
+//1st way
+io.Copy(os.Stdout, resp.Body)
 ```
 
 ```go
+//2nd way
 bs := make([]byte, 999999)
 len, readErr := resp.Body.Read(bs)
 
